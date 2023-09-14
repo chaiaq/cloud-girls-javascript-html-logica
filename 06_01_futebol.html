@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    // vamos perguntar o número de vitórias e empates do time
+
+    // o retorno do prompt é sempre texto
+    
+    //quando multiplica ou divide o texto por um número ele converte o texto em numero para tentar 'ajudar' mas na soma (concatenação) isso não funciona
+    
+    var vitorias = parseInt(prompt("Coloque o número de vitórias"));
+    var empates = parseInt(prompt("Coloque o número de empates"));
+    //o parseInt converte a resposta em número
+
+    // cada vitoria vale 3 pontos e cada empate vale 1
+
+    var pontos = vitorias*3 + empates;
+
+    mostra("O total de pontos do seu time é " + pontos);
+
+</script>

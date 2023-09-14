@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) {
+        var imc = peso/(altura*altura);
+        // mostra("O IMC calculado é " + imc);
+        return imc;
+    }
+
+    // o cálculo do IMC segundo a OMS é peso / (altura*altura)
+
+    /**
+    var peso = 52;
+    var altura = 1.57;
+
+    var imc = peso/(altura*altura);
+
+    mostra("O seu IMC é de " + imc);
+
+    var pesoAmigo = 68;
+    var alturaAmigo = 1.72;
+    var imcAmigo = pesoAmigo/(alturaAmigo*alturaAmigo);
+    mostra("O IMC do amigo é de " + imcAmigo);
+    **/
+
+    // vamos usar a fórmula para encurtar o código
+
+    /**
+    calculaImc(52, 1.57);
+    calculaImc(68, 1.72);
+    **/
+
+    // usando return:
+
+    /**
+    var imcFlavio = calculaImc(52, 1.57);
+    var imcAmigo = calculaImc(68, 1.72);
+
+    mostra(imcFlavio);
+    mostra(imcAmigo);
+    **/
+
+    var totalImc = calculaImc(52, 1.57) + calculaImc(68, 1.72);
+    mostra("a soma dos IMCS é " + totalImc);
+
+
+</script>

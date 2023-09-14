@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia() {
+        return Math.round(Math.random()*10);
+    }
+
+    var numeroPensado = sorteia();
+    // o math.random gera um número aleatório
+    // multiplica por 10 para que ande uma casa para a esquerda
+
+    var chute = parseInt(prompt("Digite seu chute de 1 a 10"));
+
+    if (chute == numeroPensado) {
+        mostra("Acertou!");
+    } else {
+        mostra("Errou, o número pensado foi " + numeroPensado);
+    }
+
+</script>
