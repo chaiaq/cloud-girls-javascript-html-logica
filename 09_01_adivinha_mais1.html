@@ -1,0 +1,91 @@
+<meta charset="UTF-8">
+
+<input>
+<button>Compare com o segredo!</button>
+
+
+
+<script>
+    function verifica() {
+        // como segredos agora é um array de vários elementos é preciso criar um for para percorrer todos os elementos
+
+        var achou = false;
+        // verifica se o usuário acertou o número, senão segue:
+        for (var posicao = 0; posicao < segredos.length; posicao++) {
+            if (input.value == segredos[posicao]) {
+                alert("Acertou!");
+                achou = true;
+                break;
+                // depois de comparar com todos os números do array se o usuário acertar o número o 'achou' vira true e o for para de rodar
+            } 
+        }
+
+        // se o usuário não acertou o achou segue falso e recebe a mensagem
+        if (achou == false) {
+            alert("Você errou!");
+        }
+
+        input.value = "";
+        input.focus();
+        
+    }
+
+    function sorteia() {
+        // função para sortear o número aleatório
+        return Math.round(Math.random() *10);
+    }
+
+    function sorteiaNumeros(quantidade) {
+        // função que irá construir o array
+        var segredos = [];
+        // construção do array
+        var numero = 1;
+        // variável de controle
+
+        while(numero<=quantidade) {
+            var numeroAleatorio = sorteia();
+            // escolhe um numero e armazena na variável
+
+            var repetido = false;
+            // variável para controlar se o número é repetido
+
+            if (numeroAleatorio !== 0) {
+                // ignorar os números '0'
+                for (var posicao = 0; posicao < segredos.length; posicao++) {
+                    // esse for verifica se o numero é repetido
+                    // usa o mesmo código que verifica se acertou
+                    if (segredos[posicao] == numeroAleatorio) {
+                        repetido = true;
+                        break;
+                        // se o numero for repetido para o processo
+                    }
+                }
+
+                if (repetido == false) {
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                    // se o numero for diferente acrescenta ele ao array através do push e aumenta o controle através da variável numero
+                }
+
+            }
+
+        }
+
+        return segredos;
+        // precisa retornar o array para que o código tenha acesso a ele fora da função
+
+    }
+
+    // var segredos = [5, 7, 10, 2];
+    // o array pode ser fixo ou pode ser criado aleatoriamente:
+    var segredos = sorteiaNumeros(3);
+    console.log(segredos);
+ 
+    var input = document.querySelector("input");
+    input.focus();
+
+    var button = document.querySelector("button");
+    
+    button.onclick = verifica;
+    
+</script>

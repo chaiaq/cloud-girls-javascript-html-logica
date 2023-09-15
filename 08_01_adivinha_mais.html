@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<input>
+<button>Compare com o segredo!</button>
+
+
+
+<script>
+
+    function verifica() {
+        if (input.value ==  segredo) {
+        //compara se o segredo é igual ao valor do input
+        alert("Acertou!");
+        } else {
+            alert("Ih, errou!");
+        }
+
+        input.value = "";
+        // limpa o input depois do chute
+        input.focus();
+        // mantém o foco na caixinha do input
+    }
+
+    var segredo = Math.round(Math.random()*10);
+    
+    var input = document.querySelector("input");
+    // pede que a variável pegue o item que está no html
+    input.focus();
+
+    var button = document.querySelector("button");
+    // está chamando o documento button e colocando na variável
+
+    button.onclick = verifica;
+    // se colocar o () depois do verifica ele irá executar a função
+    // então tem que deixar sem para que ela só aconteça quando clicar
+    
+
+    
+</script>
